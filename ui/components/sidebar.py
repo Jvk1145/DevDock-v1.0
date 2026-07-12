@@ -3,7 +3,9 @@ import config
 
 
 class Sidebar(ctk.CTkFrame):
-    def __init__(self, parent):
+
+
+    def __init__(self, parent, show_dashboard, show_add_project):
         super().__init__(
             parent,
             width=250,
@@ -23,24 +25,47 @@ class Sidebar(ctk.CTkFrame):
         title.pack(pady=(30, 40))
 
         # Navigation Buttons
-        menu_items = [
-            "🏠 Dashboard",
-            "📂 Projects",
-            "➕ Add Project",
-            "⭐ Favorites",
-            "📊 Statistics",
-            "⚙ Settings"
-        ]
 
-        for item in menu_items:
-            btn = ctk.CTkButton(
-                self,
-                text=item,
-                width=200,
-                height=42,
-                corner_radius=10,
-                fg_color="transparent",
-                hover_color=config.PRIMARY,
-                anchor="w"
-            )
-            btn.pack(pady=6, padx=20)
+        dashboard_btn = ctk.CTkButton(
+            self,
+            text="🏠 Dashboard",
+            width=200,
+            height=42,
+            corner_radius=10,
+            fg_color="transparent",
+            hover_color=config.PRIMARY,
+            anchor="w",
+            command=show_dashboard
+        )
+
+        dashboard_btn.pack(pady=6, padx=20)
+
+        add_project_btn = ctk.CTkButton(
+            self,
+            text="➕ Add Project",
+            width=200,
+            height=42,
+            corner_radius=10,
+            fg_color="transparent",
+            hover_color=config.PRIMARY,
+            anchor="w",
+            command=show_add_project
+        )
+
+        add_project_btn.pack(pady=6, padx=20)
+
+        settings_btn = ctk.CTkButton(
+            self,
+            text="⚙ Settings",
+            width=200,
+            height=42,
+            corner_radius=10,
+            fg_color="transparent",
+            hover_color=config.PRIMARY,
+            anchor="w"
+        )
+
+        settings_btn.pack(pady=6, padx=20)
+
+        self.show_dashboard = show_dashboard
+        self.show_add_project = show_add_project

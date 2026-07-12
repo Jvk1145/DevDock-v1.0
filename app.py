@@ -4,6 +4,8 @@ import config
 from ui.components.sidebar import Sidebar
 from ui.components.topbar import TopBar
 from ui.pages.dashboard import Dashboard
+from ui.pages.add_project import AddProject
+from database.database import db
 
 # Appearance
 ctk.set_appearance_mode("Dark")
@@ -11,6 +13,7 @@ ctk.set_default_color_theme("blue")
 
 
 class DevDock(ctk.CTk):
+
     def __init__(self):
         super().__init__()
 
@@ -27,10 +30,14 @@ class DevDock(ctk.CTk):
         self.configure(fg_color=config.BACKGROUND)
 
         # Sidebar
-        self.sidebar = Sidebar(self)
+        self.sidebar = Sidebar(
+            self,
+            self.show_dashboard,
+            self.show_add_project
+        )
         self.sidebar.pack(side="left", fill="y")
 
-        # Main Content
+        # Main Frame
         self.main_frame = ctk.CTkFrame(
             self,
             fg_color=config.BACKGROUND
@@ -45,5 +52,44 @@ class DevDock(ctk.CTk):
         self.topbar = TopBar(self.main_frame)
         self.topbar.pack(fill="x")
 
-        self.dashboard = Dashboard(self.main_frame)
-        self.dashboard.pack(fill="both", expand=True)
+        # Content Area
+        self.content = ctk.CTkFrame(
+            self.main_frame,
+            fg_color=config.BACKGROUND
+        )
+        self.content.pack(
+            fill="both",
+            expand=True
+        )
+
+        # Open Dashboard on startup
+        self.show_dashboard()
+
+    # -----------------------------
+    # Navigation Methods
+    # -----------------------------
+
+    def clear_content(self):
+        """Remove everything from the content area"""
+        for widget in self.content.winfo_children():
+            widget.destroy()
+
+    def show_dashboard(self):
+        self.clear_content()
+
+        dashboard = Dashboard(self.content)
+        dashboard.pack(fill="both", expand=True)
+
+    def show_add_project(self):
+        self.clear_content()
+
+        add_project = AddProject(
+            self.content,
+            self.show_dashboard
+        )
+
+
+
+if __name__ == "__main__":
+    app = DevDock()
+    app.mainloop()
