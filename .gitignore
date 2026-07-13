@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual Environment
+.venv/
+
+# PyInstaller
+build/
+dist/
+
+# IDE Files
+.idea/
+.vscode/
+
+
+# Generated Files
+*.exe
+*.rar
+
+# SQLite Temporary Files
+*.db-journal
