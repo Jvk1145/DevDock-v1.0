@@ -1,0 +1,29 @@
+# Virtual environments
+.venv/
+.venv*/
+venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Build output
+build/
+dist/
+installer_output/
+
+# IDE
+.idea/
+.vscode/
+
+# Local data and logs
+*.db
+*.db-wal
+*.db-shm
+*.log
+
+# Archives
+*.rar
