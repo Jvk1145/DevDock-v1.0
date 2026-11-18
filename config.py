@@ -14,7 +14,7 @@ APP_NAME = "DevDock"
 APP_VERSION = "2.0.0"
 APP_DESCRIPTION = "A developer project launcher: keep every project one click away from the right IDE."
 APP_USER_MODEL_ID = "DevDock.ProjectLauncher"
-GITHUB_REPO_URL = "https://github.com/Jvk1145/DevDock"
+GITHUB_REPO_URL = "https://github.com/Jvk1145/DevDock-v1.0"
 
 
 def _default_app_dir() -> Path:

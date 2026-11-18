@@ -6,7 +6,7 @@
 
 **Every project one click away from the right IDE.**
 
-[![tests](https://github.com/Jvk1145/DevDock/actions/workflows/tests.yml/badge.svg)](https://github.com/Jvk1145/DevDock/actions/workflows/tests.yml)
+[![tests](https://github.com/Jvk1145/DevDock-v1.0/actions/workflows/tests.yml/badge.svg)](https://github.com/Jvk1145/DevDock-v1.0/actions/workflows/tests.yml)
 ![Python](https://img.shields.io/badge/python-3.12%2B-3776AB?logo=python&logoColor=white)
 ![Platform](https://img.shields.io/badge/platform-Windows-0078D6?logo=windows&logoColor=white)
 ![UI](https://img.shields.io/badge/UI-CustomTkinter-6366F1)
@@ -118,8 +118,8 @@ drains with `after()`.
 ## Run from source
 
 ```powershell
-git clone https://github.com/Jvk1145/DevDock.git
-cd DevDock
+git clone https://github.com/Jvk1145/DevDock-v1.0.git
+cd DevDock-v1.0
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt

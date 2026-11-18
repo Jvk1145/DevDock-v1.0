@@ -5,7 +5,7 @@
 #define AppName "DevDock"
 #define AppVersion "2.0.0"
 #define AppPublisher "Jvk1145"
-#define AppURL "https://github.com/Jvk1145/DevDock"
+#define AppURL "https://github.com/Jvk1145/DevDock-v1.0"
 #define AppExe "DevDock.exe"
 
 [Setup]
